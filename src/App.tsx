@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from './Header';
 import SearchBar from './SearchBar';
@@ -6,13 +7,14 @@ import Footer from './Footer';
 import { ThemeProvider } from './ThemeContext';
 import { fetchUserData } from './redux/UserSlice';
 import TrendsSection from './Features';
-import { FeaturedReposSection } from './Features';
+import FeaturedReposSection from './Features';
+import { RootState, AppDispatch } from './store'; // Import types
 
 function App() {
-    const dispatch = useDispatch();
-    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch<AppDispatch>();
+    const user = useSelector((state: RootState) => state.user);
 
-    const handleSearch = (username) => {
+    const handleSearch = (username: string) => {
         dispatch(fetchUserData(username));
     };
 
@@ -26,7 +28,8 @@ function App() {
                         {user.error && <p className="text-center text-red-500">{user.error}</p>}
                         {!user.data && <TrendsSection />}
                         {!user.data && <FeaturedReposSection />}
-                        {user.data && <UserProfile user={user.data} />}
+                        {user.data && <UserProfile/>}
+                    
                     </div>
                 </main>
                 <Footer />

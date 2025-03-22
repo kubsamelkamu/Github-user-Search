@@ -1,13 +1,14 @@
+import React from 'react';
 import { useContext ,useState} from 'react';
 import { ThemeContext } from './ThemeContext';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export const  FeedbackSection = () => {
-    const { theme } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext)!;
     const [feedback, setFeedback] = useState('');
     const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         if (feedback.trim() === '') {
             setMessage('Please provide your feedback before submitting.');
@@ -24,7 +25,7 @@ export const  FeedbackSection = () => {
             <p>Tell us what you think about the application. Your feedback helps us improve!</p>
             <form className={`mt-4 ${theme === 'light' ? 'bg-gray-100 text-black' : 'bg-gray-900 text-white'}`} onSubmit={handleSubmit}>
                 <textarea
-                    rows="4"
+                    rows={4}
                     placeholder="Your feedback..."
                     value={feedback}
                     onChange={(e) => setFeedback(e.target.value)}
@@ -40,7 +41,7 @@ export const  FeedbackSection = () => {
 
 
 const Footer = () => {
-    const { theme } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext)!;
     return (
         <footer className={`p-4 mt-8 ${theme === 'light' ? 'bg-gray-100 text-black' : 'bg-gray-900 text-white'} rounded-t-lg`}>
             <div className="container mx-auto text-center">
@@ -49,13 +50,13 @@ const Footer = () => {
                 <div className="mt-8">
                     <h2 className="text-xl font-semibold mb-4">Follow Us</h2>
                     <div className="flex justify-center space-x-4">
-                        <a href="https://github.com/kubsamelkamu" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-white">
+                        <a href="https://github.com/kubsamelkamu" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-white"title='Github'>
                             <FaGithub size={24} />
                         </a>
-                        <a href="https://instagram.com/kubsa58" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-white">
+                        <a href="https://instagram.com/kubsa58" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-white" title="Instagram">
                             <FaInstagram size={24} />
                         </a>
-                        <a href="https://linkedin.com/in/kubsa-melkamu-519bb5263" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-white">
+                        <a href="https://linkedin.com/in/kubsa-melkamu-519bb5263" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-white"title='LinkedIn'>
                             <FaLinkedin size={24} />
                         </a>
                     </div>

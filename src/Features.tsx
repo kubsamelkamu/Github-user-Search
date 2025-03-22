@@ -1,8 +1,9 @@
+import React from "react";
 import { ThemeContext } from "./ThemeContext";
 import { useContext } from "react";
 
 function TrendsSection(){
-    const{theme} = useContext(ThemeContext);
+    const{theme} = useContext(ThemeContext)!;
     return (
         <div  className={`p-4 mt-2 ${theme === 'light' ? 'bg-gray-100 text-black' : 'bg-gray-900 text-white'} rounded-t-lg shadow-md`}>
             <h2 className="text-xl font-semibold mb-4">GitHub Trends</h2>
@@ -18,7 +19,7 @@ function TrendsSection(){
 
 
 export function FeaturedReposSection(){
-    const{theme} = useContext(ThemeContext);
+    const{theme} = useContext(ThemeContext)!;
     return (
         <div className={`p-4 mt-9 ${theme === 'light' ? 'bg-gray-100 text-black' : 'bg-gray-900 text-white'} rounded-t-lg shadow-md`}>
             <h2 className="text-xl font-semibold mb-4">Featured GitHub Repositories</h2>
