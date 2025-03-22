@@ -1,17 +1,5 @@
 # GitHub User Search
 
-## Table of Contents
-
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Demo](#demo)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Technologies Used](#technologies-used)
-7. [Contributing](#contributing)
-8. [Feedback](#feedback)
-
-
 ## Project Overview
 
 **GitHub User Search** is a web application that allows users to search for GitHub profiles by username. The application provides an interactive UI to display user details, including repositories, followers, and more. It is built with React and includes a light/dark theme toggle feature.
@@ -35,13 +23,14 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/github-user-search.git
+   git clone https://github.com/kubsamelkamu/github-user-search.git
    cd github-user-search
 2. **Install Dependencies**
     npm install
 3.**Run Application**
    npm run dev
 4.Open your browser and visit http://localhost:5173/
+
 ## Usage
 
 1. **Search for a User:**
@@ -71,7 +60,3 @@ To run this project locally, follow these steps:
 - **GitHub API**: Provides access to user data, repositories, and other resources from GitHub.
 - **React Icons**: A collection of popular icons used to enhance the user interface.
 - **ThemeContext**: A custom context in React for managing the light/dark theme across the application.
-
-## Contributing
-
-Your Contributions are welcome and appreciated!
